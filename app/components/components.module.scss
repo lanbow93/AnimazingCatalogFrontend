@@ -10,9 +10,10 @@ $baseFont: 'Bubblegum Sans', sans-serif;
   position: absolute;
   width: 100%;
   font-family: $baseFont;
+  font-size: 1.2rem;
 
   .container {
-    background-color: rgba(255, 255, 255, 0.508);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 0.1rem 0.2rem;
     cursor: pointer;
     position: absolute;
@@ -22,7 +23,7 @@ $baseFont: 'Bubblegum Sans', sans-serif;
     .bar1,
     .bar2,
     .bar3 {
-      width: 35px;
+      width: 30px;
       height: 5px;
       background-color: black;
       margin: 6px 0;
@@ -48,7 +49,7 @@ $baseFont: 'Bubblegum Sans', sans-serif;
       max-width 1s ease-out,
       background-color 1s ease-out;
     white-space: nowrap; /* Prevent text from wrapping when closed */
-    background-color: transparent; /* Set the initial background color here */
+    background-color: transparent; 
   }
 
   .open {
@@ -56,7 +57,7 @@ $baseFont: 'Bubblegum Sans', sans-serif;
     transition:
       max-width 1s ease-in,
       background-color 1s ease-in;
-    background-color: white; /* Set the background color to transparent when open */
+      background-color: rgba(255, 255, 255, 0.8); 
   }
 
   .navOptions {
@@ -81,7 +82,7 @@ $baseFont: 'Bubblegum Sans', sans-serif;
         left: 50%;
         width: 0;
         height: 0.1em;
-        background-color: white;
+        background-color: black;
         opacity: 0;
         transition:
           width 300ms,
