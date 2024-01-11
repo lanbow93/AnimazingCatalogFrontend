@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+$baseFont: 'Bubblegum Sans', sans-serif;
+.navigation {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+  letter-spacing: 1px;
+  border-radius: 0 0 0.5rem 0.5rem;
+  top: 0.5rem;
+  position: absolute;
+  width: 100%;
+  font-family: $baseFont;
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.508);
+    padding: 0.1rem 0.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+      transition: 1s;
+    }
+
+    &.change {
+      .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+    }
+  }
+  .closed {
+    max-width: 0;
+    overflow: hidden;
+    transition:
+      max-width 1s ease-out,
+      background-color 1s ease-out;
+    white-space: nowrap; /* Prevent text from wrapping when closed */
+    background-color: transparent; /* Set the initial background color here */
+  }
+
+  .open {
+    max-width: 200px; /* Adjust this value as needed */
+    transition:
+      max-width 1s ease-in,
+      background-color 1s ease-in;
+    background-color: white; /* Set the background color to transparent when open */
+  }
+
+  .navOptions {
+    .navList {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    .singleLink {
+      text-decoration: none;
+      color: black;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.25rem;
+      overflow: hidden;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0.1em;
+        background-color: white;
+        opacity: 0;
+        transition:
+          width 300ms,
+          opacity 300ms,
+          transform 1000ms;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after,
+      &:focus::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+}
