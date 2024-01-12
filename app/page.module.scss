@@ -15,9 +15,9 @@ $baseFont: 'Bubblegum Sans', sans-serif;
         color: white;
         border-radius: 1rem;
         padding: 0 1rem;
-        margin: 0.1rem;
         font-family: $baseFont;
         font-size: 4rem;
+        margin-bottom: 2rem;
         
       }
       p {
@@ -25,9 +25,9 @@ $baseFont: 'Bubblegum Sans', sans-serif;
         color: white;
         border-radius: 1rem;
         padding: 0 1rem;
-        margin: 0.1rem;
         font-family: $baseFont;
         font-size: 2rem;
+        margin-bottom: 2rem;
         
       }
     }
@@ -35,7 +35,6 @@ $baseFont: 'Bubblegum Sans', sans-serif;
       display: flex;
       input{
         border-radius: 1rem 0 0 1rem;
-        
         padding-left: .5rem;
         font-size: 1.3rem;
         

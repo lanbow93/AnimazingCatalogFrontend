@@ -6,7 +6,7 @@ function SearchBox() {
       <button onClick={() => console.log("Success")}>
         <img
           src='/searchIcon.png'
-          alt=''
+          alt='magnifyingGlass Icon'
         />
       </button>
     </>

@@ -53,7 +53,7 @@ $baseFont: 'Bubblegum Sans', sans-serif;
   }
 
   .open {
-    max-width: 200px; /* Adjust this value as needed */
+    max-width: 14rem; /* Adjust this value as needed */
     transition:
       max-width 1s ease-in,
       background-color 1s ease-in;
@@ -75,12 +75,14 @@ $baseFont: 'Bubblegum Sans', sans-serif;
       padding-bottom: 0.25rem;
       overflow: hidden;
       position: relative;
+  
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 50%;
         width: 0;
+        
         height: 0.1em;
         background-color: black;
         opacity: 0;
