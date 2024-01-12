@@ -10,11 +10,12 @@ const Navigation = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Fetch JSON data from the public directory
+  
   const navLinks = [
     ['Home', '/'],
-    ['About', '/about'],
-    // Add more links as needed
+    ['Login','/login'],
+    ['Collections', '/collections'],
+    
   ];
 
   return (
