@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+// Base colors
+$color-background-base: #0A0A0A;
+$color-text-primary: #FFFFFF;
+$color-button-default: #E2E2E2;
+$color-button-active: #FFFFFF;
+$color-link: #9C27B0;
+$color-navigation: rgba(0, 0, 0, 0.7);
+$color-card: #1A1A1A;
+$color-border: #333333;
+$color-accent: #FFC107;
+$color-error: #F44336;
+$color-success: #4CAF50;
+$color-warning: #FF9800;
+$color-overlay: rgba(0, 0, 0, 0.5);
+$color-hover-focus: #F5F5F5;
+$color-text-selection: #CDDC39;
+
+// Accessibility & Modes
+$color-background-light-mode: #F5F5F5;
+$color-text-dark-mode: $color-text-primary;
+$color-text-light-mode: #0A0A0A;
+
+// Typography
+$font-primary: 'Bubblegum Sans', sans-serif;
+$font-size-body: 16px;
+$font-size-heading: 18px;
+$font-weight-heading: bold;

@@ -10,10 +10,9 @@ const Navigation = () => {
     setMenuOpen(!menuOpen);
   };
 
-  
   const navLinks = [
     ['Home', '/'],
-    ['Login','/login'],
+    ['Login', '/login'],
     ['Collections', '/collections'],
   ];
 
