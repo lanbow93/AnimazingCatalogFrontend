@@ -1,6 +1,7 @@
 'use client';
 import styles from './page.module.scss';
 import SearchBox from './components/SearchBox';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -24,15 +25,18 @@ export default function Home() {
 
           <p>
             Organize, explore, and keep track of your favorite manga series
-            effortlessly. Whether you're an avid collector, a casual reader, or
-            a dedicated otaku, Animazing Catalog is your ultimate companion for
-            manga cataloging and discovery.
+            effortlessly. Whether you&apos;re an avid collector, a casual
+            reader, or a dedicated otaku, Animazing Catalog is your ultimate
+            companion for manga cataloging and discovery.
           </p>
 
           <p>
             Dive into a world of beautifully organized manga collections and
             make your reading experience truly Animazing!
           </p>
+          <Link href='/signup' className={styles.linkTo}>
+            Sign Up
+          </Link>
         </div>
       </div>
     </main>

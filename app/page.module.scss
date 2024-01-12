@@ -33,6 +33,7 @@
     }
     .searchBox {
       display: flex;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
       input {
         border-radius: 1rem 0 0 1rem;
         padding-left: 0.5rem;
@@ -45,7 +46,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: yellow;
+        background-color: $color-accent;
         border-radius: 0 1rem 1rem 0;
         padding: 0.5rem;
         img {
@@ -59,12 +60,44 @@
   }
   .details {
     margin-top: 2rem;
+    margin: 2rem 1rem 0 1rem;
     align-self: center;
     max-width: 50rem;
     font-family: $font-primary;
-    p {
-      font-size: 1.25rem;
-      padding: 1rem 2rem;
+
+    .message {
+      background-color: $color-card;
+      color: $color-text-primary;
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+      }
+
+      .linkTo {
+        text-decoration: none;
+        background-color: $color-link;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+        color: $color-text-primary;
+        margin-bottom: 1rem;
+        box-shadow: white 0px 5px 15px;
+      }
+
+      .linkTo:active {
+        background-color: $color-button-active;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        color: black;
+        transition: ease-in-out 100ms;
+      }
     }
   }
 }
