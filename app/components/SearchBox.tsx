@@ -3,9 +3,9 @@ function SearchBox() {
   return (
     <>
       <input type='text' />
-      <button>
+      <button onClick={() => console.log("Success")}>
         <img
-          src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1200px-Magnifying_glass_icon.svg.png'
+          src='/searchIcon.png'
           alt=''
         />
       </button>

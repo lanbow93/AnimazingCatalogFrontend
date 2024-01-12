@@ -15,7 +15,6 @@ const Navigation = () => {
     ['Home', '/'],
     ['Login','/login'],
     ['Collections', '/collections'],
-    
   ];
 
   return (
