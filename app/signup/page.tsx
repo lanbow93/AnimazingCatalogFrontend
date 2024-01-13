@@ -63,23 +63,20 @@ export default function Signup() {
 
   return (
     <div className={styles.signup}>
-      <div
-        className={`${styles.modalSection} ${
-          isModalActive ? '' : styles.hidden
-        }`}
-      >
-        <HiddenModal
-          status={modalData.status}
-          message={modalData.message}
-          closeModal={setIsModalActive}
-        />
-      </div>
+      <HiddenModal
+        status={modalData.status}
+        message={modalData.message}
+        isModalActive={isModalActive}
+        handleModal={setIsModalActive}
+        isCloseWindow={true}
+      />
 
       <form onSubmit={handleSubmission}>
         <h2>New User Creation</h2>
         <label>Username:</label>
         <input
           required
+          autoComplete='none'
           type='text'
           name='username'
           value={userData.username}
@@ -111,6 +108,9 @@ export default function Signup() {
         />
         <button
           type='submit'
+          className={
+            userData.password === userData.verifyPassword ? '' : styles.disabled
+          }
         >
           Submit
         </button>

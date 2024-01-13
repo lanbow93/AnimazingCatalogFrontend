@@ -5,6 +5,7 @@
   justify-content: center;
   background: url('/Animazing_Catalog_Background.png') center;
   background-size: cover;
+
   form {
     margin: 4rem 2rem;
     padding: 1rem;
@@ -56,6 +57,10 @@
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       color: black;
       transition: ease-in-out 100ms;
+    }
+
+    .disabled {
+      background-color: $color-error;
     }
   }
 }
