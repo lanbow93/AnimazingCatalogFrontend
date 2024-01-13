@@ -57,7 +57,7 @@ export default function Signup() {
     setUserData({ ...userData, [name]: value });
   };
 
-  if (isLoading) {
+  if (!isLoading) {
     return <LoadingScreen />;
   }
 
