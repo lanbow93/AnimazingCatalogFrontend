@@ -24,8 +24,8 @@ const Navigation = () => {
         }`}
       >
         <ul className={styles.navList}>
-          {navLinks.map((linkInfo) => (
-            <li key={linkInfo[1]}>
+          {navLinks.map((linkInfo, index) => (
+            <li key={linkInfo[1] + index}>
               <Link className={styles.singleLink} href={linkInfo[1]}>
                 {linkInfo[0]}
               </Link>

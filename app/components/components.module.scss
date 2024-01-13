@@ -7,10 +7,11 @@
   letter-spacing: 1px;
   border-radius: 0 0 0.5rem 0.5rem;
   top: 0.5rem;
-  position: absolute;
+  position: sticky;
   width: 100%;
   font-family: $font-primary;
   font-size: 1.2rem;
+  margin-bottom: -2.35rem;
 
   .container {
     background-color: $color-navigation;
@@ -100,4 +101,12 @@
       }
     }
   }
+}
+.footer{
+  margin-top: 1rem;
+  padding: 20px;
+  background-color: #F2F2F2; // MangaDex's brand color or a neutral color
+  text-align: center;
+  border-top: 1px solid #D3D3D3;
+
 }
