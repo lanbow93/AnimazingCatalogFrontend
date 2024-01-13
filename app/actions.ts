@@ -1,28 +1,27 @@
-import { IUserData } from "./utils/SharedInterfaces"
+import { IUserData } from './utils/SharedInterfaces';
 
 // const url = "https://animazingcatalogue.netlify.app"
-const url = "http://localhost:7777"
-
+const url = 'http://localhost:7777';
 
 export async function signup(userData: IUserData) {
-    try {
-        const response = await fetch(url + '/user/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
-            body: JSON.stringify(userData),
-        })
+  try {
+    const response = await fetch(url + '/user/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(userData),
+    });
 
-        if (response.ok) {
-            return await response.json() 
-        } else {
-            return await response.json() 
-        }
-    } catch (error) {
-        return { error }
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return await response.json();
     }
+  } catch (error) {
+    return { error };
+  }
 }
 
 // export async function login(userData) {
