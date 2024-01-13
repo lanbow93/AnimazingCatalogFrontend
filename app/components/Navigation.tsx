@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './components.module.scss';
 
-const Navigation = () => {
+export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -44,5 +44,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
