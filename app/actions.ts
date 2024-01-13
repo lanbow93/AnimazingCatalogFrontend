@@ -1,3 +1,5 @@
+import { IUserData } from "./utils/SharedInterfaces"
+
 // const url = "https://animazingcatalogue.netlify.app"
 const url = "http://localhost:7777"
 

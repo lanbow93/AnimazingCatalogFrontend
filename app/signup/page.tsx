@@ -6,25 +6,24 @@ import { HiddenModal } from '../components/HiddenModal';
 import { LoadingScreen } from '../components/LoadingScreen'; 
 import { redirect } from 'next/navigation';
 import { signup } from '../actions';
+import { IModalData, IUserData } from '../utils/SharedInterfaces';
 
 
 export default function Signup() {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [isModalActive, setIsModalActive] = useState<boolean>(false)
-    const [modalData, setModalData] = useState({
+    const [modalData, setModalData] = useState<IModalData>({
         status: '',
         message: '',
         additional: '',
     })
-    const [userData, setUserData] = useState({
+    const [userData, setUserData] = useState<IUserData>({
         username: '',
-        badgeName: '',
-        email: '',
         password: '',
         verifyPassword: '',
+        email: '',
+        isAdult: false
     })
-    
-    
 
     const handleSubmission = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -39,7 +38,7 @@ export default function Signup() {
             setIsModalActive(true)
             return
         }
-        const response = await signup(JSON.stringify(userData))
+        const response = await signup(userData)
         setIsLoading(false)
         if (response.data) {
             redirect('/login')
@@ -54,7 +53,7 @@ export default function Signup() {
         }
     }
 
-    const handleInputChange = (event) => {
+    const handleInputChange = (event: any) => {
         const { name, value } = event.target
         setUserData({ ...userData, [name]: value })
     }
@@ -82,14 +81,6 @@ export default function Signup() {
                         type="text"
                         name="username"
                         value={userData.username}
-                        onChange={handleInputChange}
-                    />
-                    <label>Badge Name:</label>
-                    <input
-                        required
-                        type="text"
-                        name="badgeName"
-                        value={userData.badgeName}
                         onChange={handleInputChange}
                     />
                     <label>E-Mail:</label>
