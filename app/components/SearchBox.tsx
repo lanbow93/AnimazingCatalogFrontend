@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-function SearchBox() {
+export function SearchBox() {
   const [searchInput, setSearchInput] = useState('');
   return (
     <>
@@ -17,5 +17,3 @@ function SearchBox() {
     </>
   );
 }
-
-export default SearchBox;

@@ -1,6 +1,6 @@
 @import 'app/_variables.scss';
 
-.signup {
+.login {
   display: flex;
   justify-content: center;
   background: url('/Animazing_Catalog_Background.png') center;
@@ -38,6 +38,19 @@
     input:focus {
       outline: none;
     }
+
+    a {
+      text-align: end;
+      color: white;
+      letter-spacing: 0.05rem;
+    }
+    a:hover {
+      font-weight: bold;
+      color: $color-accent;
+      font-size: 1.25rem;
+      transition: ease-in-out 200ms;
+    }
+
     button {
       text-decoration: none;
       background-color: $color-link;
@@ -47,6 +60,7 @@
       margin-bottom: 1rem;
       box-shadow: white 0px 5px 15px;
       margin-top: 1rem;
+      width: 100%;
     }
 
     button:active,
@@ -57,10 +71,6 @@
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       color: black;
       transition: ease-in-out 100ms;
-    }
-
-    .disabled {
-      background-color: $color-error;
     }
   }
 }

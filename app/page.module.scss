@@ -90,7 +90,8 @@
         box-shadow: white 0px 5px 15px;
       }
 
-      .linkTo:active, .linkTo:hover {
+      .linkTo:active,
+      .linkTo:hover {
         background-color: $color-button-active;
         box-shadow:
           rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,

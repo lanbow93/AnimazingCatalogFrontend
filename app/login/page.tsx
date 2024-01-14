@@ -4,11 +4,12 @@ import styles from './page.module.scss';
 import { FormEvent, useState } from 'react';
 import { HiddenModal } from '../components/HiddenModal';
 import { LoadingScreen } from '../components/LoadingScreen';
+import { login } from '../actions';
+import { IModalData, ILoginData } from '../utils/SharedInterfaces';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signup } from '../actions';
-import { IModalData, IUserData } from '../utils/SharedInterfaces';
 
-export default function Signup() {
+export default function Login() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
@@ -17,31 +18,19 @@ export default function Signup() {
     message: '',
     additional: '',
   });
-  const [userData, setUserData] = useState<IUserData>({
+  const [userData, setUserData] = useState<ILoginData>({
     username: '',
     password: '',
-    verifyPassword: '',
-    email: '',
-    isAdult: false,
   });
 
   const handleSubmission = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-    if (userData.password !== userData.verifyPassword) {
-      setIsLoading(false);
-      setModalData({
-        status: 'Failed To Sign Up',
-        message: 'Passwords Did Not Match',
-        additional: 'Try Again',
-      });
-      setIsModalActive(true);
-      return;
-    }
-    const response = await signup(userData);
+
+    const response = await login(userData);
     setIsLoading(false);
     if (response.data) {
-      router.push('/login');
+      router.push('/dashboard');
     } else {
       const { status, message, error } = response;
       setModalData({
@@ -63,7 +52,7 @@ export default function Signup() {
   }
 
   return (
-    <div className={styles.signup}>
+    <div className={styles.login}>
       <HiddenModal
         status={modalData.status}
         message={modalData.message}
@@ -73,7 +62,7 @@ export default function Signup() {
       />
 
       <form onSubmit={handleSubmission}>
-        <h2>New User Creation</h2>
+        <h2>User Login</h2>
         <label>Username:</label>
         <input
           required
@@ -81,14 +70,6 @@ export default function Signup() {
           type='text'
           name='username'
           value={userData.username}
-          onChange={handleInputChange}
-        />
-        <label>E-Mail:</label>
-        <input
-          required
-          type='email'
-          name='email'
-          value={userData.email}
           onChange={handleInputChange}
         />
         <label>Password:</label>
@@ -99,22 +80,8 @@ export default function Signup() {
           value={userData.password}
           onChange={handleInputChange}
         />
-        <label>Verify Password:</label>
-        <input
-          required
-          type='password'
-          name='verifyPassword'
-          value={userData.verifyPassword}
-          onChange={handleInputChange}
-        />
-        <button
-          type='submit'
-          className={
-            userData.password === userData.verifyPassword ? '' : styles.disabled
-          }
-        >
-          Submit
-        </button>
+        <Link href='/forgotpassword'>Forgot Password?</Link>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   );
