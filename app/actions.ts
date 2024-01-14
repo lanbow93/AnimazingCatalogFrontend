@@ -1,7 +1,6 @@
 import { ILoginData, IUserData } from './utils/SharedInterfaces';
 
-// const url = "https://animazingcatalogue.netlify.app"
-const url = 'http://localhost:7777';
+const url = process.env.BACKEND_URL;
 
 export async function signup(userData: IUserData) {
   try {
@@ -47,7 +46,7 @@ export async function login(userData: ILoginData) {
 
 export async function verifyEmail(id: string) {
   try {
-    const response = await fetch(url + '/user/email-verification/' + id, {
+    const response = await fetch(url + '/user/verify-email/' + id, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
