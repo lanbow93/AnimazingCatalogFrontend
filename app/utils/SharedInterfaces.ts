@@ -6,6 +6,11 @@ export interface IUserData {
   isAdult: boolean;
 }
 
+export interface ILoginData {
+  username: string;
+  password: string;
+}
+
 export interface IModalData {
   status: string;
   message: string;

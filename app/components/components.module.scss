@@ -171,18 +171,14 @@
       color: black;
       font-family: $font-primary;
       border-radius: 1rem;
-      
     }
 
     img {
-     object-fit: cover;
+      object-fit: cover;
       max-width: 100%;
     }
   }
 }
-  
-
-
 
 .hidden {
   display: none;
