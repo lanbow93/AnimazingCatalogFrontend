@@ -1,12 +1,14 @@
 'use client';
 import Link from 'next/link';
 import styles from './page.module.scss';
+import { useEffect } from 'react';
 
 export default function EmailVerification({
   params,
 }: {
   params: { slug: string };
 }) {
+  useEffect(() => {}, []);
   return (
     <div className={styles.emailVerification}>
       <div className={styles.message}>

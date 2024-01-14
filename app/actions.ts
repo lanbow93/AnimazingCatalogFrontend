@@ -45,6 +45,25 @@ export async function login(userData: ILoginData) {
   }
 }
 
+export async function verifyEmail(id: string) {
+  try {
+    const response = await fetch(url + '/user/email-verification/' + id, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return await response.json();
+    }
+  } catch (error) {
+    return { error };
+  }
+}
+
 // export async function login(userData) {
 //     try {
 //         const response = await fetch(url + '/user/login', {
