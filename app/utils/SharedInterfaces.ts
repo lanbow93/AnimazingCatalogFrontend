@@ -15,4 +15,5 @@ export interface IModalData {
   status: string;
   message: string;
   additional: string;
+  isCloseWindow: boolean;
 }

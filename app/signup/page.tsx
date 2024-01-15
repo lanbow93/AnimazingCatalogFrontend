@@ -16,6 +16,7 @@ export default function Signup() {
     status: '',
     message: '',
     additional: '',
+    isCloseWindow: true,
   });
   const [userData, setUserData] = useState<IUserData>({
     username: '',
@@ -34,6 +35,7 @@ export default function Signup() {
         status: 'Failed To Sign Up',
         message: 'Passwords Did Not Match',
         additional: 'Try Again',
+        isCloseWindow: true,
       });
       setIsModalActive(true);
       return;
@@ -49,6 +51,7 @@ export default function Signup() {
         status: status,
         message: message,
         additional: error,
+        isCloseWindow: true,
       });
       setIsModalActive(true);
     }
@@ -70,7 +73,7 @@ export default function Signup() {
         message={modalData.message}
         isModalActive={isModalActive}
         handleModal={setIsModalActive}
-        isCloseWindow={true}
+        isCloseWindow={modalData.isCloseWindow}
       />
 
       <form onSubmit={handleSubmission}>

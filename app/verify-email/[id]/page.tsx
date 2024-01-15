@@ -18,6 +18,7 @@ export default function EmailVerification({
     status: '',
     message: '',
     additional: '',
+    isCloseWindow: true,
   });
   const [screenData, setScreenData] = useState({
     heading: '',
@@ -52,6 +53,7 @@ export default function EmailVerification({
         status: status,
         message: message,
         additional: error,
+        isCloseWindow: true,
       });
       setIsModalActive(true);
     }
@@ -68,7 +70,7 @@ export default function EmailVerification({
         message={modalData.message}
         isModalActive={isModalActive}
         handleModal={setIsModalActive}
-        isCloseWindow={true}
+        isCloseWindow={modalData.isCloseWindow}
       />
       <div className={styles.message}>
         <h2>{screenData.heading}</h2>
@@ -76,7 +78,7 @@ export default function EmailVerification({
         {screenData.isSuccess ? (
           <Link href='/login'>Login</Link>
         ) : (
-          <Link href='/home'>Home</Link>
+          <Link href='/'>Home</Link>
         )}
       </div>
     </div>

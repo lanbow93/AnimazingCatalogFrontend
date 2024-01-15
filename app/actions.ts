@@ -72,7 +72,7 @@ export async function forgotPassword(email: string) {
         'Content-Type': 'application/json',
       },
       credentials: 'include',
-      body: JSON.stringify({"email": email}),
+      body: JSON.stringify({ email: email }),
     });
     if (response.ok) {
       return await response.json();
