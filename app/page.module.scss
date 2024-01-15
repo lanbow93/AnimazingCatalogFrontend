@@ -79,25 +79,28 @@
         padding: 1rem 2rem;
       }
 
-      .linkTo {
-        text-decoration: none;
-        background-color: $color-link;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
-        text-align: center;
-        color: $color-text-primary;
-        margin-bottom: 1rem;
-        box-shadow: white 0px 5px 15px;
-      }
+      .buttonArea {
+        display: flex;
+        .linkTo {
+          text-decoration: none;
+          background-color: $color-link;
+          padding: 1rem 2rem;
+          border-radius: 2rem;
+          text-align: center;
+          color: $color-text-primary;
+          margin: 0 1rem 1rem 1rem;
+          box-shadow: white 0px 5px 15px;
+        }
 
-      .linkTo:active,
-      .linkTo:hover {
-        background-color: $color-button-active;
-        box-shadow:
-          rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-        color: black;
-        transition: ease-in-out 100ms;
+        .linkTo:active,
+        .linkTo:hover {
+          background-color: $color-button-active;
+          box-shadow:
+            rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          color: black;
+          transition: ease-in-out 100ms;
+        }
       }
     }
   }

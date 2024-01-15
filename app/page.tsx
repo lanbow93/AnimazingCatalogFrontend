@@ -34,10 +34,14 @@ export default function Home() {
             make your reading experience truly Animazing, with the support of
             Mangadex!
           </p>
-
-          <Link href='/signup' className={styles.linkTo}>
-            Sign Up
-          </Link>
+          <div className={styles.buttonArea}>
+            <Link href='/signup' className={styles.linkTo}>
+              Sign Up
+            </Link>
+            <Link href='/login' className={styles.linkTo}>
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </main>
