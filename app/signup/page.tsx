@@ -41,7 +41,7 @@ export default function Signup() {
     const response = await signup(userData);
     setIsLoading(false);
     if (response.data) {
-      console.log(response.data)
+      console.log(response.data);
       // router.push('/login');
     } else {
       const { status, message, error } = response;

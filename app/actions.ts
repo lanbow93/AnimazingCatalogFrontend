@@ -1,4 +1,4 @@
-'use server'
+'use server';
 import { ILoginData, IUserData } from './utils/SharedInterfaces';
 
 const url = process.env.BACKEND_URL;
