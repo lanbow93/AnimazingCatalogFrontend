@@ -12,7 +12,7 @@ export default function EmailVerification({
 }: {
   params: { id: string };
 }) {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [modalData, setModalData] = useState<IModalData>({
     status: '',
@@ -33,6 +33,7 @@ export default function EmailVerification({
     const response = await verifyEmail(params.id);
 
     setIsLoading(false);
+    console.log(response);
     if (response.data) {
       setScreenData({
         heading: 'Email Has Been Confirmed',
@@ -46,7 +47,7 @@ export default function EmailVerification({
           'Reattempt email verification and login. If problem persists, contact Sitemaster.',
         isSuccess: false,
       });
-      const { status, message, error } = response.error;
+      const { status, message, error } = response;
       setModalData({
         status: status,
         message: message,
