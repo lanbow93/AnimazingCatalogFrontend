@@ -43,8 +43,14 @@ export default function Signup() {
     const response = await signup(userData);
     setIsLoading(false);
     if (response.data) {
-      console.log(response.data);
-      // router.push('/login');
+      const { status, message } = response;
+      setModalData({
+        status: status,
+        message: message,
+        additional: 'Try Again',
+        isCloseWindow: false,
+      });
+      setIsModalActive(true);
     } else {
       const { status, message, error } = response;
       setModalData({
@@ -68,13 +74,23 @@ export default function Signup() {
 
   return (
     <div className={styles.signup}>
-      <HiddenModal
-        status={modalData.status}
-        message={modalData.message}
-        isModalActive={isModalActive}
-        handleModal={setIsModalActive}
-        isCloseWindow={modalData.isCloseWindow}
-      />
+      {modalData.isCloseWindow ? (
+        <HiddenModal
+          status={modalData.status}
+          message={modalData.message}
+          isModalActive={isModalActive}
+          handleModal={setIsModalActive}
+          isCloseWindow={modalData.isCloseWindow}
+        />
+      ) : (
+        <HiddenModal
+          status={modalData.status}
+          message={modalData.message}
+          isModalActive={isModalActive}
+          handleModal={() => router.push('/login')}
+          isCloseWindow={modalData.isCloseWindow}
+        />
+      )}
 
       <form onSubmit={handleSubmission}>
         <h2>New User Creation</h2>
