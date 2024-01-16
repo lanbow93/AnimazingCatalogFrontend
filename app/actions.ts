@@ -66,7 +66,7 @@ export async function verifyEmail(id: string) {
 
 export async function forgotPassword(email: string) {
   try {
-    const response = await fetch(url + '/user/forgotpassword', {
+    const response = await fetch(url + '/user/forgotpassword/', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
