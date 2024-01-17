@@ -1,0 +1,76 @@
+@import 'app/_variables.scss';
+
+.forgotPassword {
+  display: flex;
+  justify-content: center;
+  background: url('/Animazing_Catalog_Background.png') center;
+  background-size: cover;
+
+  form {
+    margin: 4rem 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $color-navigation;
+    color: $color-text-primary;
+    font-family: $font-primary;
+    display: grid;
+    min-width: 20rem;
+    // box-shadow: $standard-shadow;
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    input {
+      margin-bottom: 1.5rem;
+      padding-left: 0.25rem;
+      font-size: 1.25rem;
+      border-radius: 1rem;
+      padding-left: 0.5rem;
+      font-size: 1.3rem;
+    }
+    input:focus {
+      outline: none;
+    }
+
+    a {
+      text-align: end;
+      color: white;
+      letter-spacing: 0.05rem;
+    }
+    a:hover {
+      font-weight: bold;
+      color: $color-accent;
+      font-size: 1.25rem;
+      transition: ease-in-out 200ms;
+    }
+
+    button {
+      text-decoration: none;
+      background-color: $color-link;
+      padding: 0.5rem;
+      border-radius: 2rem;
+      color: $color-text-primary;
+      margin-bottom: 1rem;
+      box-shadow: white 0px 5px 15px;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    button:active,
+    button:hover {
+      background-color: $color-button-active;
+      box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      color: black;
+      transition: ease-in-out 100ms;
+    }
+  }
+}

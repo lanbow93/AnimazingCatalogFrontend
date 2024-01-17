@@ -2,13 +2,13 @@
 
 import styles from './page.module.scss';
 import { FormEvent, useState } from 'react';
-import { HiddenModal } from '../components/HiddenModal';
-import { LoadingScreen } from '../components/LoadingScreen';
+import { HiddenModal } from '@/app/components/HiddenModal';
+import { LoadingScreen } from '@/app/components/LoadingScreen';
 import { useRouter } from 'next/navigation';
-import { signup } from '../actions';
-import { IModalData, IUserData } from '../utils/SharedInterfaces';
+import { forgotPasswordReset } from '@/app/actions';
+import { IModalData, IPasswordData } from '@/app/utils/SharedInterfaces';
 
-export default function Signup() {
+export default function UpdatePassword({ params }: { params: { id: string } }) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
@@ -18,21 +18,19 @@ export default function Signup() {
     additional: '',
     isCloseWindow: true,
   });
-  const [userData, setUserData] = useState<IUserData>({
+  const [passwordData, setpasswordData] = useState<IPasswordData>({
     username: '',
     password: '',
     verifyPassword: '',
-    email: '',
-    isAdult: false,
   });
 
   const handleSubmission = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-    if (userData.password !== userData.verifyPassword) {
+    if (passwordData.password !== passwordData.verifyPassword) {
       setIsLoading(false);
       setModalData({
-        status: 'Failed To Sign Up',
+        status: 'Failed To Update',
         message: 'Passwords Did Not Match',
         additional: 'Try Again',
         isCloseWindow: true,
@@ -40,9 +38,12 @@ export default function Signup() {
       setIsModalActive(true);
       return;
     }
-    const response = await signup(userData);
+    const id = params.id;
+    const response = await forgotPasswordReset(passwordData, id);
+    console.log(response);
     setIsLoading(false);
     if (response.data) {
+      console.log(response);
       const { status, message } = response;
       setModalData({
         status: status,
@@ -65,7 +66,7 @@ export default function Signup() {
 
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
-    setUserData({ ...userData, [name]: value });
+    setpasswordData({ ...passwordData, [name]: value });
   };
 
   if (isLoading) {
@@ -93,44 +94,39 @@ export default function Signup() {
       )}
 
       <form onSubmit={handleSubmission}>
-        <h2>New User Creation</h2>
+        <h2>Update Password</h2>
         <label>Username:</label>
         <input
           required
           autoComplete='none'
           type='text'
           name='username'
-          value={userData.username}
+          value={passwordData.username}
           onChange={handleInputChange}
         />
-        <label>E-Mail:</label>
-        <input
-          required
-          type='email'
-          name='email'
-          value={userData.email}
-          onChange={handleInputChange}
-        />
-        <label>Password:</label>
+
+        <label>New Password:</label>
         <input
           required
           type='password'
           name='password'
-          value={userData.password}
+          value={passwordData.password}
           onChange={handleInputChange}
         />
-        <label>Verify Password:</label>
+        <label>Verify New Password:</label>
         <input
           required
           type='password'
           name='verifyPassword'
-          value={userData.verifyPassword}
+          value={passwordData.verifyPassword}
           onChange={handleInputChange}
         />
         <button
           type='submit'
           className={
-            userData.password === userData.verifyPassword ? '' : styles.disabled
+            passwordData.password === passwordData.verifyPassword
+              ? ''
+              : styles.disabled
           }
         >
           Submit

@@ -17,6 +17,7 @@ export default function Login() {
     status: '',
     message: '',
     additional: '',
+    isCloseWindow: true,
   });
   const [userData, setUserData] = useState<ILoginData>({
     username: '',
@@ -37,6 +38,7 @@ export default function Login() {
         status: status,
         message: message,
         additional: error,
+        isCloseWindow: true,
       });
       setIsModalActive(true);
     }
@@ -58,7 +60,7 @@ export default function Login() {
         message={modalData.message}
         isModalActive={isModalActive}
         handleModal={setIsModalActive}
-        isCloseWindow={true}
+        isCloseWindow={modalData.isCloseWindow}
       />
 
       <form onSubmit={handleSubmission}>
