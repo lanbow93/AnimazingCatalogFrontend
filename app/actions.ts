@@ -1,5 +1,5 @@
 'use server';
-import { ILoginData, IUserData } from './utils/SharedInterfaces';
+import { ILoginData, IPasswordData, IUserData } from './utils/SharedInterfaces';
 
 const url = process.env.BACKEND_URL;
 
@@ -66,7 +66,7 @@ export async function verifyEmail(id: string) {
 
 export async function forgotPassword(email: string) {
   try {
-    const response = await fetch(url + '/user/forgotpassword/', {
+    const response = await fetch(url + '/user/forgotpassword', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -74,6 +74,30 @@ export async function forgotPassword(email: string) {
       credentials: 'include',
       body: JSON.stringify({ email: email }),
     });
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return await response.json();
+    }
+  } catch (error) {
+    return { error };
+  }
+}
+
+export async function forgotPasswordReset(
+  passwordData: IPasswordData,
+  id: string
+) {
+  try {
+    const response = await fetch(url + '/user/forgotpassword/' + id + "/", {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify(passwordData),
+    });
+
     if (response.ok) {
       return await response.json();
     } else {

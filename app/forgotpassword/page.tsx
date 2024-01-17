@@ -24,7 +24,7 @@ export default function ForgotPassword() {
     event.preventDefault();
     setIsLoading(true);
     const response = await forgotPassword(email);
-
+    console.log(response);
     setIsLoading(false);
     if (response.data) {
       setModalData({

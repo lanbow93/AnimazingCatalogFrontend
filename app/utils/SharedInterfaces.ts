@@ -6,6 +6,12 @@ export interface IUserData {
   isAdult: boolean;
 }
 
+export interface IPasswordData {
+  username: string;
+  password: string;
+  verifyPassword: string;
+}
+
 export interface ILoginData {
   username: string;
   password: string;
