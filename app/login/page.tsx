@@ -29,6 +29,7 @@ export default function Login() {
     setIsLoading(true);
 
     const response = await login(userData);
+    console.log(response)
     setIsLoading(false);
     if (response.data) {
       router.push('/dashboard');
