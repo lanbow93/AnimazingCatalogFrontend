@@ -1,7 +1,7 @@
 'use server';
 import { ILoginData, IPasswordData, IUserData } from './utils/SharedInterfaces';
 
-const url = process.env.BACKEND_URL;
+const url = "https://animazing-catalog.onrender.com";
 
 export async function signup(userData: IUserData) {
   try {
