@@ -12,5 +12,8 @@ export default function Dashboard(){
           <SearchBox />
         </div>
       </div>
+      <div className={styles.collections}>
+        <h1>List Of Collections</h1>
+      </div>
     </div>
 }

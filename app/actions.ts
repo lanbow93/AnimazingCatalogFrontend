@@ -107,3 +107,22 @@ export async function forgotPasswordReset(
     return { error };
   }
 }
+
+export async function searchManga(titleKeyword: string, isAdult: boolean){
+  try {
+    const response = await fetch(url + `/series/?titleKeyword=${titleKeyword}&isAdult=${isAdult}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return await response.json();
+    }
+  } catch (error) {
+    return { error };
+  }
+}
