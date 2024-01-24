@@ -7,7 +7,7 @@ export function SearchBox() {
   const router = useRouter()
   const [searchInput, setSearchInput] = useState('');
   return (
-    <>
+    <form >
       <input
         type='text'
         value={searchInput}
@@ -16,6 +16,6 @@ export function SearchBox() {
       <button onClick={() => router.push(`/search?titleKeyword=${searchInput}`)}>
         <img src='/searchIcon.png' alt='magnifyingGlass Icon' />
       </button>
-    </>
+      </form>
   );
 }

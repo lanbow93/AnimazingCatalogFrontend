@@ -8,9 +8,9 @@ export default function Dashboard(){
         <div className={styles.textArea}>
           <h1>Search</h1>
         </div>
-        <div className={styles.searchBox}>
-          <SearchBox />
-        </div>
+        
+        <SearchBox />
+        
       </div>
       <div className={styles.collections}>
         <h1>List Of Collections</h1>

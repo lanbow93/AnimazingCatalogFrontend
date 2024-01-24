@@ -10,9 +10,9 @@ export default function Home() {
           <h1>Welcome</h1>
           <p>Animazing Catalogue</p>
         </div>
-        <div className={styles.searchBox}>
-          <SearchBox />
-        </div>
+        
+        <SearchBox />
+        
       </div>
       <div className={styles.details}>
         <div className={styles.message}>
