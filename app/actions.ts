@@ -1,8 +1,8 @@
 'use server';
 import { ILoginData, IPasswordData, IUserData } from './utils/SharedInterfaces';
 
-const url = "https://animazing-catalog.onrender.com";
-
+// const url = "https://animazing-catalog.onrender.com";
+const url = "http://localhost:7777"
 export async function signup(userData: IUserData) {
   try {
     const response = await fetch(url + '/user/signup', {

@@ -13,7 +13,7 @@ export const Navigation = () => {
   const navLinks = [
     ['Home', '/'],
     ['Login', '/login'],
-    ['Collections', '/collections'],
+    ['Dashboard', '/dashboard']
   ];
 
   return (
