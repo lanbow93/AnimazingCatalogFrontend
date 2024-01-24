@@ -1,8 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export function SearchBox() {
+  const router = useRouter()
   const [searchInput, setSearchInput] = useState('');
   return (
     <>
@@ -11,7 +13,7 @@ export function SearchBox() {
         value={searchInput}
         onChange={(event) => setSearchInput(event.target.value)}
       />
-      <button onClick={() => console.log('Success')}>
+      <button onClick={() => router.push(`/search?titleKeyword=${searchInput}`)}>
         <img src='/searchIcon.png' alt='magnifyingGlass Icon' />
       </button>
     </>
